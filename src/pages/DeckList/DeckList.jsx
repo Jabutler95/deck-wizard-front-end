@@ -1,6 +1,9 @@
 // css
 import './DeckList.css'
 
+// components 
+import DeckCard from '../../components/DeckCard'
+
 const DeckList = (props) => {
   return (
     <main className="list">
@@ -10,9 +13,7 @@ const DeckList = (props) => {
 
       <ul>
         {props.decks.map((deck) => (
-          <li key={deck._id}>
-            {deck.name}
-          </li>
+          <DeckCard deck={deck} key={deck._id} />
         ))}
       </ul>
 
