@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import DeckList from './pages/DeckList/DeckList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -76,7 +77,7 @@ function App() {
         <Route
           path="/decks"
           element={
-            <h1>Deck List</h1>
+            <DeckList decks={decks} /> 
           }
         />
       </Routes>
