@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DeckList from './pages/DeckList/DeckList'
+import NewDeck from './pages/NewDeck/NewDeck'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -86,6 +87,9 @@ function App() {
             <DeckList decks={decks} /> 
           }
         />
+        <Route path='/decks/new' element={
+          <NewDeck handleAddDeck={handleAddDeck} />
+        } />
       </Routes>
     </>
   )
