@@ -62,6 +62,12 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/decks"
+          element={
+            <h1>Deck List</h1>
+          }
+        />
       </Routes>
     </>
   )
