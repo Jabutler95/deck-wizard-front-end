@@ -45,6 +45,12 @@ function App() {
     fetchDecks()
   }, [])
 
+  const handleAddDeck = async formData => {
+    const newDeck = await deckService.create(formData)
+    setDecks([newDeck, ...decks])
+    navigate('/decks')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
