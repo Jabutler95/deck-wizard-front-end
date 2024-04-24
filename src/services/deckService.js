@@ -24,7 +24,19 @@ async function create(formData) {
   }
 }
 
+async function deleteDeck(deckId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${deckId}`, {
+      method: 'DELETE'
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 export {
   index,
   create,
+  deleteDeck as delete,
 }

@@ -13,7 +13,11 @@ const DeckList = (props) => {
 
       <ul>
         {props.decks.map((deck) => (
-          <DeckCard deck={deck} key={deck._id} />
+          <DeckCard
+          deck={deck}
+          key={deck._id}
+          handleRemoveDeck={props.handleRemoveDeck}
+          />
         ))}
       </ul>
 

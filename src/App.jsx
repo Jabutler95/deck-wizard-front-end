@@ -52,6 +52,11 @@ function App() {
     navigate('/decks')
   }
 
+  const handleRemoveDeck = async (deckId) => {
+    const removedDeck = await deckService.delete(deckId)
+    setDecks(decks.filter((d) => d._id !== removedDeck._id))
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -84,7 +89,10 @@ function App() {
         <Route
           path="/decks"
           element={
-            <DeckList decks={decks} /> 
+            <DeckList
+            decks={decks}
+            handleRemoveDeck={handleRemoveDeck}
+            /> 
           }
         />
         <Route path='/decks/new' element={
