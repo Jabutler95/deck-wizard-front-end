@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -8,6 +8,8 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import DeckList from './pages/DeckList/DeckList'
+import NewDeck from './pages/NewDeck/NewDeck'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -15,12 +17,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as deckService from './services/deckService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [decks, setDecks] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -31,6 +35,26 @@ function App() {
 
   const handleAuthEvt = () => {
     setUser(authService.getUser())
+  }
+
+  useEffect(() => {
+    const fetchDecks = async () => {
+      const data = await deckService.index()
+      setDecks(data)
+      console.log('Response from server:', data)
+    }
+    fetchDecks()
+  }, [])
+
+  const handleAddDeck = async formData => {
+    const newDeck = await deckService.create(formData)
+    setDecks([newDeck, ...decks])
+    navigate('/decks')
+  }
+
+  const handleRemoveDeck = async (deckId) => {
+    const removedDeck = await deckService.delete(deckId)
+    setDecks(decks.filter((d) => d._id !== removedDeck._id))
   }
 
   return (
@@ -62,6 +86,18 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/decks"
+          element={
+            <DeckList
+            decks={decks}
+            handleRemoveDeck={handleRemoveDeck}
+            /> 
+          }
+        />
+        <Route path='/decks/new' element={
+          <NewDeck handleAddDeck={handleAddDeck} />
+        } />
       </Routes>
     </>
   )
