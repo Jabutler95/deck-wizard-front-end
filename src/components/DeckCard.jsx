@@ -7,9 +7,9 @@ const DeckCard = ({ deck, handleRemoveDeck }) => {
         </button>
       </section>
       <h2>{ deck.title }</h2>
-      <p> Wins: {deck.wins}</p>
-      <p> Losses: {deck.losses}</p>
-      <p> Color: {deck.mana}</p>
+      <p> Wins: { deck.wins }</p>
+      <p> Losses: { deck.losses }</p>
+      <p> Color: { deck.mana }</p>
     </li>
   )
 }
