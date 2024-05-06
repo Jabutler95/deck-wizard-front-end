@@ -6,7 +6,7 @@
   justify-content: flex-start;
 }
 
-ul {
+.list ul {
   gap: 10px;
   padding: 0;
   width: 100%;
@@ -15,7 +15,7 @@ ul {
   grid-template-columns: repeat(1, 1fr);
 }
 
-li {
+.list li {
   margin: 5px;
   height: 255px;
   display: flex;
@@ -26,25 +26,25 @@ li {
   justify-content: center;
   background: rgb(70, 215, 255, .75);
   border: 1.5px solid rgba(255, 255, 255, .2);
-  box-shadow: 22px 22px 42px #15b0dc, -22px -22px 42px #19d7ff;
+
   background:
     linear-gradient(0deg,
       rgba(70, 215, 255, .65) 0%,
       rgba(70, 215, 255, .85) 100%);
 }
 
-li img {
+.list li img {
   width: 135px;
   margin-bottom: 14px;
 }
 
-li section {
+.list li section {
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
-li button {
+.list li button {
   margin: 0;
   padding: 0;
   width: 30px;
@@ -58,11 +58,11 @@ li button {
   background: rgba(255, 255, 255, .25);
 }
 
-li button:hover {
+.list li button:hover {
   background: rgb(155, 230, 255);
 }
 
-li button:active {
+.list li button:active {
   transform: scale(0.92);
 }
 

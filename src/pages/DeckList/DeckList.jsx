@@ -1,12 +1,12 @@
 // css
-import './DeckList.css'
+import styles from './DeckList.module.css'
 
 // components 
 import DeckCard from '../../components/DeckCard'
 
 const DeckList = (props) => {
   return (
-    <main className="list">
+    <main className={styles.list}>
       <h1>DECK LIST</h1>
 
       {!props.decks.length && <h2>Oops! No decks here!</h2>}

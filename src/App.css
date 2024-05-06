@@ -1,8 +1,4 @@
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+
 
 body {
   box-sizing: border-box;
@@ -27,8 +23,27 @@ a:visited {
   color: #00d8ff
 }
 
+nav {
+  background-color: none;
+  box-shadow: none;
+}
+
 nav > ul {
+  background-color: wheat;
   margin: 0;
   padding: 16px 32px;
+  display: flex;
 }
+
+nav li {
+  height: 30px;
+  background-color: black;
+  box-shadow: none;
+
+}
+
+
+
+
+
 
