@@ -9,7 +9,7 @@ body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #282B28;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,9 +18,9 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-a,
-a:visited {
-  color: #00d8ff
+a {
+  color: whitesmoke;
+  text-decoration: none;
 }
 
 nav {
@@ -29,17 +29,24 @@ nav {
 }
 
 nav > ul {
-  background-color: wheat;
+  background-color: #5C7276;
   margin: 0;
   padding: 16px 32px;
   display: flex;
+  list-style: none;
+  justify-content: space-between;
 }
 
 nav li {
   height: 30px;
-  background-color: black;
-  box-shadow: none;
+  margin: 5px;
+}
 
+nav li:hover {
+  text-decoration: underline;
+  text-decoration-color: whitesmoke;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
 }
 
 
