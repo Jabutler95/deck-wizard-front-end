@@ -1,8 +1,17 @@
-const DeckCard = ({ deck, handleRemoveDeck }) => {
+import { useNavigate } from 'react-router-dom'
+
+
+const DeckCard = ({ deck }) => {
+  const navigate = useNavigate()
+
+  const handleDeleteClick = () => {
+    navigate(`/decks/${deck._id}/confirm-delete`)
+  }
+
   return (
     <li>
       <section>
-      <button onClick={() => handleRemoveDeck(deck._id)}>
+      <button onClick={handleDeleteClick}>
           X
         </button>
       </section>

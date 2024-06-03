@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DeckList from './pages/DeckList/DeckList'
 import NewDeck from './pages/NewDeck/NewDeck'
+import ConfirmDeleteDeck from './pages/ConfirmDeleteDeck/ConfirmDeleteDeck'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -98,6 +99,11 @@ function App() {
         <Route path='/decks/new' element={
           <NewDeck handleAddDeck={handleAddDeck} />
         } />
+        <Route
+          path="/decks/:deckId/confirm-delete"
+          element={<ConfirmDeleteDeck handleRemoveDeck={handleRemoveDeck} decks={decks} />}
+        />
+
       </Routes>
     </>
   )
